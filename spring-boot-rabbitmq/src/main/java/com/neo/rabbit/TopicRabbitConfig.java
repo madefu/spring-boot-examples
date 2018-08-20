@@ -21,12 +21,16 @@ public class TopicRabbitConfig {
 
     @Bean
     public Queue queueMessages() {
-        return new Queue(TopicRabbitConfig.messages);
+        Queue q = new Queue(TopicRabbitConfig.messages);
+        
+    	return q;
     }
 
     @Bean
     TopicExchange exchange() {
-        return new TopicExchange("topicExchange");
+    	TopicExchange topicExchange = new TopicExchange("topicExchange");
+    	
+        return topicExchange;
     }
 
     @Bean

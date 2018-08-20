@@ -1,15 +1,25 @@
 package com.neo.model;
 
 import java.io.Serializable;
+import java.util.Date;
+
+import org.apache.http.client.utils.DateUtils;
 
 /**
  * Created by summer on 2016/11/29.
  */
 public class User implements Serializable{
 
-    private String name;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 2792703939441305661L;
+
+	private String name;
 
     private String pass;
+    
+    private String dateStr = DateUtils.formatDate(new Date(),"yy-MM-dd HH:mm:ss");
 
     public String getName() {
         return name;
@@ -34,4 +44,12 @@ public class User implements Serializable{
                 ", pass='" + pass + '\'' +
                 '}';
     }
+
+	public String getDateStr() {
+		return dateStr;
+	}
+
+	public void setDateStr(String dateStr) {
+		this.dateStr = dateStr;
+	}
 }
